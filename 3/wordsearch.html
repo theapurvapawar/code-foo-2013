@@ -6,9 +6,17 @@
 	</head>
 
 	<body>
-		<input id='inputbox' type='text'></input>
+
+		<p>Word Search array indices start from (0,0) and end at (24,19)</p>
+
+		<div id='array'>
+		<script type="text/javascript">showArray();</script>
+		</div>	
+
+		<input id='inputbox' type='text' onchange='find();'></input>
 		<input type='button' onclick='find();' value='Find!'></input>
 		<p id='demo'></p>
+		
 	</body>
 
 </html>

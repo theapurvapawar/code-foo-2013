@@ -1,6 +1,3 @@
-function find()
-{
-
 var wordSearchArray = 
 [
 ["x",	"n",	"t",	"g",	"j",	"h",	"e",	"a",	"l",	"t",	"h",	"u",	"s",	"k",	"b",	"w",	"a",	"s",	"t",	"a"],
@@ -30,10 +27,34 @@ var wordSearchArray =
 ["o",	"y",	"o",	"q",	"y",	"a",	"k",	"d",	"j",	"e",	"b",	"l",	"u",	"n",	"d",	"e",	"r",	"s",	"c",	"u"],
 ];
 
+function showArray()
+{
+
+var tableString;
+
+tableString = "<table border='0' cellspacing='10'>";
+for(var i=0;i<25;i++)
+{
+	tableString = tableString + "<tr>";
+
+	for(var j=0;j<20;j++)
+	{
+		tableString = tableString + "<td>" + wordSearchArray[i][j] + "</td>";		
+	}
+
+	tableString = tableString + "</tr>";
+}
+tableString = tableString + "</table>";
+
+document.getElementById("array").innerHTML=tableString;
+}
+
+function find()
+{
 
 var txt = document.getElementById("inputbox").value;
 txt = txt.toLowerCase();
-txt = txt.replace("/\s*/g", "");
+txt = txt.replace(/\s+/g, '');
 var disp="";
 
 disp = horizontalSearch(wordSearchArray,txt);
@@ -45,7 +66,6 @@ if(disp=="Not Found")
 	disp = reverseVerticalSearch(wordSearchArray,txt);
 if(disp=="Not Found")
 	disp = DiagLTtoRB(wordSearchArray,txt);
-
 
 document.getElementById("demo").innerHTML=disp;
 }
@@ -76,6 +96,11 @@ var flag=0;
 			{
 				k=0; //start again
 				disp=""; //clear 
+				if(Input.charAt(k)==SearchArray[i][j])
+				{
+					disp=disp+" "+SearchArray[i][j]+"("+i+","+j+")-->";
+					k++;
+				}
 			}								
 			
 		}
@@ -109,7 +134,12 @@ var flag=0;
 			else
 			{
 				k=0; //start again
-				disp=""; //clear 				
+				disp=""; //clear 
+				if(Input.charAt(k)==SearchArray[i][j])
+				{
+					disp=disp+" "+SearchArray[i][j]+"("+i+","+j+")-->";
+					k++;
+				}				
 			}								
 			
 		}
@@ -146,6 +176,11 @@ var flag=0;
 			{
 				k=0; //start again
 				disp=""; //clear 
+				if(Input.charAt(k)==SearchArray[i][j])
+				{
+					disp=disp+" "+SearchArray[i][j]+"("+i+","+j+")-->";
+					k++;
+				}
 			}								
 			
 		}
@@ -179,7 +214,12 @@ var flag=0;
 			else
 			{
 				k=0; //start again
-				disp=""; //clear 
+				disp=""; //clear
+				if(Input.charAt(k)==SearchArray[i][j])
+				{
+					disp=disp+" "+SearchArray[i][j]+"("+i+","+j+")-->";
+					k++;
+				} 
 			}								
 			
 		}
@@ -200,7 +240,7 @@ var flag=0;
 	
 	for(var i=0;i<25;i++)
 	{
-		for(var j=0;j<20;j++) //linearly searches horizontally
+		for(var j=0;j<20;j++) //linearly searches diagonally left-top to right-bottom
 		{
 		
 			if(Input.charAt(k)==SearchArray[i][j])
@@ -214,6 +254,11 @@ var flag=0;
 			{
 				k=0; //start again
 				disp=""; //clear 
+				if(Input.charAt(k)==SearchArray[i][j])
+				{
+					disp=disp+" "+SearchArray[i][j]+"("+i+","+j+")-->";
+					k++;
+				}
 			}								
 			
 		}
