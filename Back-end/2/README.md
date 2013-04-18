@@ -4,10 +4,10 @@ High Score Sorting
 Implemented in Java
 
 There are four basic classes -
-1. player class - this holds the individual player's name(string) and score(float).
-2. ScoreParser class - this basically is a SAX parser implementation, where it parses the input file and creates an array of objects of the player class
-3. QuickSortScore class - this sorts the array of objects according to the player score in ascending order.
-4. HighScoreSort class - simply runs the main class and displays the sorted array of objects in descending order on the console.
+>1. player class - this holds the individual player's name(string) and score(float).
+>2. ScoreParser class - this basically is a SAX parser implementation, where it parses the input file and creates an array of objects of the player class
+>3. QuickSortScore class - this sorts the array of objects according to the player score in ascending order.
+>4. HighScoreSort class - simply runs the main class and displays the sorted array of objects in descending order on the console.
 
 Running the program
 ------------
