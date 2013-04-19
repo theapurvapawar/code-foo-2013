@@ -1,4 +1,4 @@
-Moves Calcutor!
+Moves Calculator!
 =============
 
 Running the program
@@ -32,21 +32,33 @@ notes to myself -
 >wanted to implement in php, but java has an advantage over here.
 
 >1012 words - long list!
+
 >not in a mood to make it static, time to use dynamic arrays! \m/
+
 >advantage? array size increases or decreases on word list size
 
 >damn, this is tiring
+
 >cost matrix program taking time
+
 >argh, not gonna try to expand to more than 3 letter words
+
 >poof, done
 
 >dijkstra time..
+
 >implement dijkstra, input cost matrix, should be done
+
 >why?? moves path not working!!
+
 >one small variable, one big frustration
+
 >done! woohoo!
 
 >longest path found yet -
 
 >Moves from PAY to URN = 5
+
 >Path = URN<-ERN<-ERR<-EAR<-PAR<-PAY
+
+>:) ;)
