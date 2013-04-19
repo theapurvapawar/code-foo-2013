@@ -25,7 +25,7 @@ Gamers in San Francisco Bay Area
 >	3. Gamer Population in SF Bay Area = 4635728 (rounded off)
 
 7. Adding a tolerance of plus/minus 5% for any errors/rounding off/economics etc. -
->	1.Min = 4403941 (rounded off)
+>	1. Min = 4403941 (rounded off)
 >	2. Max = 4867514 (rounded off)
 
 Last words -
