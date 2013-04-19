@@ -1,0 +1,14 @@
+package SortIncludes;
+
+
+ 
+public class HighScoreReader {
+ 
+	public static void main(String[] args) {
+		
+		String fileName = "/home/blackdragon/code-foo-2013/Back-end/2/HighScoreSort/bin/SortIncludes/score.xml";
+	
+
+	}
+	
+}

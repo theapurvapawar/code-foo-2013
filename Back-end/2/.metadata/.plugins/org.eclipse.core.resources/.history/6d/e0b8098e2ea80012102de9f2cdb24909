@@ -1,0 +1,16 @@
+package SortIncludes;
+
+public class player implements Comparable<player>{
+    String name;
+    float score;
+    
+    public int compareTo(player other)
+    {
+        return (this.score).compareTo(other.score);
+    }
+
+    public player(String name, float score) {
+        this.name = name;
+        this.score = score;
+    }
+}

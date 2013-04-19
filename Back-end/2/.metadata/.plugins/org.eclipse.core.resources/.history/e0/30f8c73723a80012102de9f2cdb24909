@@ -1,0 +1,90 @@
+package SortIncludes;
+
+
+import java.io.File;
+import org.w3c.dom.*;
+
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.DocumentBuilder;
+import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException; 
+
+public class ScoreParser {
+
+    
+	public static void main (String args []){
+    try {
+
+            DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
+            Document doc = docBuilder.parse (new File("/home/blackdragon/code-foo-2013/Back-end/2/HighScoreSort/bin/SortIncludes/score.xml"));
+            
+            player playerList[] = null;
+
+            // normalize text representation
+            doc.getDocumentElement ().normalize ();
+            System.out.println ("Root element : " + 
+                 doc.getDocumentElement().getNodeName());
+
+
+            NodeList listOfPersons = doc.getElementsByTagName("player");
+            int totalPersons = listOfPersons.getLength();
+            System.out.println("Total Players : " + totalPersons);
+
+            for(int s=0; s<listOfPersons.getLength() ; s++){
+
+
+                Node firstPersonNode = listOfPersons.item(s);
+                if(firstPersonNode.getNodeType() == Node.ELEMENT_NODE){
+
+
+                    Element firstPersonElement = (Element)firstPersonNode;
+
+                    //-------
+                    NodeList firstNameList = firstPersonElement.getElementsByTagName("name");
+                    Element firstNameElement = (Element)firstNameList.item(0);
+
+                    NodeList textFNList = firstNameElement.getChildNodes();
+                    String name = (textFNList.item(0)).getNodeValue().trim();
+
+                    //-------
+                    NodeList lastNameList = firstPersonElement.getElementsByTagName("score");
+                    Element lastNameElement = (Element)lastNameList.item(0);
+
+                    NodeList textLNList = lastNameElement.getChildNodes();
+                    float score = Float.parseFloat((textLNList.item(0)).getNodeValue().trim());
+                    
+                    //System.out.println("Player : " + name + " Score : " + score);
+                    
+                    playerList[s] = new player(name,score);
+                    
+                    System.out.println("Player : " + playerList[s].name + " Score : " + playerList[s].score);
+
+                    //----
+                    
+
+
+                }//end of if clause
+
+
+            }//end of for loop with s var
+
+
+        }catch (SAXParseException err) {
+        System.out.println ("** Parsing error" + ", line " 
+             + err.getLineNumber () + ", uri " + err.getSystemId ());
+        System.out.println(" " + err.getMessage ());
+
+        }catch (SAXException e) {
+        Exception x = e.getException ();
+        ((x == null) ? e : x).printStackTrace ();
+
+        }catch (Throwable t) {
+        t.printStackTrace ();
+        }
+        //System.exit (0);
+
+    }//end of main
+
+
+}

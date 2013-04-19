@@ -1,0 +1,80 @@
+import java.util.ArrayList;
+
+
+public class Dijkstra {
+	
+	void shortestPath(ArrayList<ArrayList<Integer>> cost,ArrayList<String> wordArray, int startnode)
+	{
+		ArrayList<Integer> distance = new ArrayList<Integer>();
+		ArrayList<Integer> predecessor = new ArrayList<Integer>();
+		ArrayList<Integer> visited = new ArrayList<Integer>();
+		int count=0,mindistance,nextnode=0;
+		
+		for(int i=0;i<wordArray.size();i++)
+		{
+			distance.add(i, -1);
+			predecessor.add(i, -1);
+			visited.add(i, -1);
+		}
+		
+		for(int i=0;i<wordArray.size();i++)
+		{
+			distance.set(i, cost.get(startnode).get(i));
+			predecessor.set(i, startnode);
+			visited.set(i, 0);
+		}
+		distance.set(startnode, 0);
+		visited.set(startnode, 1);
+		count=1;
+		
+		while(count<(wordArray.size()-1))
+		{
+			mindistance = 9999; // set to infinity
+			
+			for(int i=0;i<wordArray.size();i++)
+				if((distance.get(i) < mindistance) && (visited.get(i)==0))
+				{
+					mindistance = distance.get(i);
+					nextnode=i;
+				}
+			
+			visited.set(nextnode, 1);
+			
+			for(int i=0;i<wordArray.size();i++)
+			{
+				if(visited.get(i)==0)
+					if(mindistance+cost.get(nextnode).get(i)<distance.get(i))
+					{
+						distance.set(i, mindistance + cost.get(nextnode).get(i));
+						predecessor.set(i, nextnode);
+					}
+				
+			}
+			count++;
+		}
+		
+		for(int i=0;i<wordArray.size();i++)
+		{
+			if(i!=startnode)
+			{
+				System.out.println("Distance of "+i+" = "+distance.get(i));
+				System.out.println("Path = "+i);
+				int j=i;
+				do
+				{
+					j=predecessor.get(i);
+					System.out.print("<-"+j);
+				}while(j!=startnode);
+			}
+		}
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

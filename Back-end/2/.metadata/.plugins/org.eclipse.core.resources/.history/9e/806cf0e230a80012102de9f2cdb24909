@@ -1,0 +1,32 @@
+package SortIncludes;
+
+import java.util.ArrayList;
+
+
+
+ 
+public class HighScoreReader {
+ 
+	public static void main(String[] args) {
+		
+		String fileName = "/home/blackdragon/code-foo-2013/Back-end/2/HighScoreSort/bin/SortIncludes/score.xml";
+		
+		ScoreParser parser = new ScoreParser();
+		
+		ArrayList<player> playerList = parser.scoreList(fileName);
+		
+		 quickSort algo = new quickSort();
+		 
+		 algo.sort(playerList);
+		
+		
+		for(int i=0;i<playerList.size();i++)
+        {
+        		player Player = playerList.get(i);
+        		System.out.println("Player : " + Player.name + " Score : " + Player.score);
+        }
+	
+
+	}
+	
+}

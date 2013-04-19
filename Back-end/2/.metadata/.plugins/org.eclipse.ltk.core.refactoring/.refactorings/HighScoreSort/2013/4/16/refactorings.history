@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;HighScoreSort&apos;&#x0A;- Original project: &apos;HighScoreSort&apos;&#x0A;- Original element: &apos;SortIncludes.quickSort.java&apos;" description="Delete element" element1="/src&lt;SortIncludes{quickSort.java" elements="1" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1366296158720" subPackages="false" version="1.0"/>
+</session>

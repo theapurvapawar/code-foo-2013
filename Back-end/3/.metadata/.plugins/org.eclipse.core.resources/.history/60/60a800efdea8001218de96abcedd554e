@@ -1,0 +1,40 @@
+import java.io.IOException;
+import java.util.ArrayList;
+
+
+public class MainMoves {
+
+	/**
+	 * @param args
+	 * @throws IOException 
+	 */
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		
+String file = "/home/blackdragon/code-foo-2013/Back-end/3/three-letter-words-temp.txt";
+		
+		ArrayList<String> wordArray = new ArrayList<String>();
+		ArrayList<ArrayList<Integer>> cost = new ArrayList<ArrayList<Integer>>();
+		Dijkstra path = new Dijkstra();
+		
+		AdjacencyBuilder prog = new AdjacencyBuilder();
+		
+		wordArray = prog.buildWordArray(file);
+		cost = prog.buildCostMatrix(wordArray);
+		
+		for(int i=0;i<wordArray.size();i++)
+		{
+			for(int j=0;j<wordArray.size();j++)
+		
+			{
+				System.out.print(cost.get(i).get(j)+"\t");
+			}
+			System.out.println("\n");
+		}
+		
+		path.shortestPath(cost, wordArray, 0);
+		
+
+	}
+
+}
