@@ -14,15 +14,14 @@ Last words -
 
 Basic question has been answered, but
 
-1. Could've done a better job by recursively using a single search function with search direction as parameter to the function. More thought, Less code.
+Could've done a better job by recursively using a single search function with search direction as parameter to the function. More thought, Less code.
 
-2. Did not care for any CSS styling on the HTML even though it's right up my alley.
-
-Although I wanted to cover the above two points, a time constraint makes me stop and continue to the next question. Will revisit if I have time left. 
+Although I wanted to cover the above point, a time constraint makes me stop and continue to the next question. Will revisit if I have time left. 
 
 
 
 Notes to myself -
+-------
 
 Error on 'score' --> check for double 's' input --> solved
 
@@ -37,3 +36,5 @@ words go from -
 	top to bottom
 	bottom to top
 	top left to bottom right diagonally
+
+Did some basic CSS styling on the HTML
