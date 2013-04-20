@@ -17,6 +17,7 @@ To run the program, execute-
 java -jar FamilyTree.jar nameString
 ```
 where 'nameString' is a name from 'family.xml' file.
+
 NOTE : 'nameString' is case-sensitive. (Ex. : type 'Ron' and not 'RON'/'ron'/'rON' etc.)
 
 Scalability of Algorithm
