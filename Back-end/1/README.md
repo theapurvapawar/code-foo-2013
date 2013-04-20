@@ -72,9 +72,13 @@ notes to myself-
 >following up both generations can be tricky, so there has to be a certain set of rules which must be defined.
 >
 >following the patriarchical tree, the conditions would be -
+
 >1. person's father or spouse must be part of family for the person to be part of family
+
 >2. if fathers generation is 'x', persons generation is 'x+1'
+
 >3. if spouses generation is 'x', persons generation is 'x'
+
 >4. the root level person ( generation no. 1 male) will not have a father ( or wont know the parents? )
 >
 >for a matriarchical tree, replace father by mother
