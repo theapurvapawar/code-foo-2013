@@ -3,19 +3,68 @@
 	<head>
 		<title>Word Search</title>
 		<script type="text/javascript" src="wordsearch.js"></script>
+
+		<style>
+			body
+			{		
+				padding:0;
+				margin:0;
+			}
+
+			#container
+			{
+				position:relative;
+				width:960px;
+				left:50%;
+				margin-left:-480px;
+				border: solid 1px #DCDCDC;
+				border-radius: 10px;
+			}
+
+			#container p
+			{
+				text-align: center;
+			}
+
+			#array td
+			{
+				margin:0;
+				width: 34px;
+				height: 5px;
+				border: solid 1px #DCDCDC;
+				text-align: center;
+				border-radius: 5px;
+				cursor:default;
+			}
+
+			#array td:hover
+			{
+				background-color: #DCDCDC;
+			}
+
+			#searchbox
+			{
+				position:relative;				
+				float:right;
+			}
+		</style>
 	</head>
 
 	<body>
+		<div id='container'>
+			<p>Word Search array indices start from (0,0) and end at (24,19)</p>
 
-		<p>Word Search array indices start from (0,0) and end at (24,19)</p>
-
-		<div id='array'>
-		<script type="text/javascript">showArray();</script>
-		</div>	
-
-		<input id='inputbox' type='text' onchange='find();'></input>
-		<input type='button' onclick='find();' value='Find!'></input>
-		<p id='demo'></p>
+			<div id='array'>
+				<script type="text/javascript">showArray();</script>
+			</div>
+		
+			<div id='searchbox'>
+				<input id='inputbox' type='text' onchange='find();'></input>
+				<input type='button' onclick='find();' value='Find!'></input>
+			</div>
+		
+			<p id='demo'>Enter Text Here --></p>
+		</div>
 		
 	</body>
 
