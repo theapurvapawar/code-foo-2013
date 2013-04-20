@@ -23,7 +23,8 @@ NOTE : 'nameString' is case-sensitive. (Ex. : type 'Ron' and not 'RON'/'ron'/'rO
 Scalability of Algorithm
 ---------------
 
-Any algorithm will scale well if the family tree contains only the "current living" generation. If the tree must include the full family history, the recursive nature of the generation determination might not scale well. This will matter maybe above 100s of generations, but in reality, we may not know of such families.
+Most of the Algorithm is linear Search in ArrayList. The final part is finding out the 'Generation' of the person in the family which is a recursive linear search till it reaches the root person. The scalabily of linear search is of course not so great. A better implementation would be building a tree and traversing it. Basic advantage of that is 'Generation' of the person can be easily determined by measuring the depth of the node with respect to the root node.
+
 Also you might note that, I have implemented the DOM parser and not SAX parser. This was just for experimentation. In real case scenarios, SAX parser must be preferred because the input XML document can be huge and DOM parser will load the full document into memory which will affect the peformance.
 
 Implementation
