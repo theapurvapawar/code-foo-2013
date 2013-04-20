@@ -29,8 +29,8 @@
 			#array td
 			{
 				margin:0;
-				width: 34px;
-				height: 5px;
+				width: 25px;
+				/*height: 2px;*/
 				border: solid 1px #DCDCDC;
 				text-align: center;
 				border-radius: 5px;
@@ -46,24 +46,63 @@
 			{
 				position:relative;				
 				float:right;
+				margin-right: 10px;
+			}
+
+			#wordList
+			{
+				position:relative;
+				text-align:right;				
+				float:right;
+				margin-right: 10px;
+				margin-top: 10px;
 			}
 		</style>
 	</head>
 
 	<body>
 		<div id='container'>
-			<p>Word Search array indices start from (0,0) and end at (24,19)</p>
+			<p>Search or play manually (Click to mark/unmark). Word Search Array starts from (1,1) and end at (25,20)</p>
 
-			<div id='array'>
-				<script type="text/javascript">showArray();</script>
-			</div>
-		
 			<div id='searchbox'>
 				<input id='inputbox' type='text' onchange='find();'></input>
 				<input type='button' onclick='find();' value='Find!'></input>
 			</div>
-		
+
 			<p id='demo'>Enter Text Here --></p>
+
+			<div id='wordList'>
+			Words to find:<br>
+			Health<br>
+			Score<br>
+			Zerg<br>
+			Assassin<br>
+			Reload<br>
+			Pylon<br>
+			Level<br>
+			Bazooka<br>
+			Blunderbuss<br>
+			Killtacular<br>
+			Heist<br>
+			Duck<br>
+			Halo<br>
+			Mushroom<br>
+			Horde<br>
+			Ganondorf<br>
+			Protoman<br>
+			Hydralisk<br>
+			Shepard<br>
+			NukaCola<br>
+			Plasmid<br>
+			Would you kindly<br>
+			Metroid<br>
+			Xin Zhao<br>
+			</div>	
+				
+			<div id='array'>
+				<script type="text/javascript">showArray();</script>
+			</div>		
+					
 		</div>
 		
 	</body>

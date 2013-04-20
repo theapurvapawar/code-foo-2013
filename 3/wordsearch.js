@@ -27,6 +27,7 @@ var wordSearchArray =
 ["o",	"y",	"o",	"q",	"y",	"a",	"k",	"d",	"j",	"e",	"b",	"l",	"u",	"n",	"d",	"e",	"r",	"s",	"c",	"u"],
 ];
 
+
 function showArray()
 {
 
@@ -39,7 +40,7 @@ for(var i=0;i<25;i++)
 
 	for(var j=0;j<20;j++)
 	{
-		tableString = tableString + "<td>" + wordSearchArray[i][j] + "</td>";		
+		tableString = tableString + "<td onclick='changeColor(this);'>" + wordSearchArray[i][j] + "</td>";		
 	}
 
 	tableString = tableString + "</tr>";
@@ -47,6 +48,14 @@ for(var i=0;i<25;i++)
 tableString = tableString + "</table>";
 
 document.getElementById("array").innerHTML=tableString;
+}
+
+function changeColor(cell)
+{
+  if ((cell.style.backgroundColor == "none") || (cell.style.backgroundColor == ""))
+    {cell.style.backgroundColor = "black";cell.style.color = "white";}
+  else
+    {cell.style.backgroundColor = "";cell.style.color = "black";}
 }
 
 function find()
@@ -87,7 +96,7 @@ var flag=0;
 		
 			if(Input.charAt(k)==SearchArray[i][j])
 			{
-				disp=disp+" "+SearchArray[i][j]+"("+i+","+j+")-->";
+				disp=disp+" "+SearchArray[i][j]+"("+(i+1)+","+(j+1)+")-->";
 				k++;
 				if(k==InputLength) //reached end of word
 					return disp+"Found";				
@@ -98,7 +107,7 @@ var flag=0;
 				disp=""; //clear 
 				if(Input.charAt(k)==SearchArray[i][j])
 				{
-					disp=disp+" "+SearchArray[i][j]+"("+i+","+j+")-->";
+					disp=disp+" "+SearchArray[i][j]+"("+(i+1)+","+(j+1)+")-->";
 					k++;
 				}
 			}								
@@ -126,7 +135,7 @@ var flag=0;
 		
 			if(Input.charAt(k)==SearchArray[i][j])
 			{
-				disp=disp+" "+SearchArray[i][j]+"("+i+","+j+")-->";
+				disp=disp+" "+SearchArray[i][j]+"("+(i+1)+","+(j+1)+")-->";
 				k++;
 				if(k==InputLength) //reached end of word
 					return disp+"Found";
@@ -137,7 +146,7 @@ var flag=0;
 				disp=""; //clear 
 				if(Input.charAt(k)==SearchArray[i][j])
 				{
-					disp=disp+" "+SearchArray[i][j]+"("+i+","+j+")-->";
+					disp=disp+" "+SearchArray[i][j]+"("+(i+1)+","+(j+1)+")-->";
 					k++;
 				}				
 			}								
@@ -167,7 +176,7 @@ var flag=0;
 		
 			if(Input.charAt(k)==SearchArray[i][j])
 			{
-				disp=disp+" "+SearchArray[i][j]+"("+i+","+j+")-->";
+				disp=disp+" "+SearchArray[i][j]+"("+(i+1)+","+(j+1)+")-->";
 				k++;
 				if(k==InputLength) //reached end of word
 					return disp+"Found";
@@ -178,7 +187,7 @@ var flag=0;
 				disp=""; //clear 
 				if(Input.charAt(k)==SearchArray[i][j])
 				{
-					disp=disp+" "+SearchArray[i][j]+"("+i+","+j+")-->";
+					disp=disp+" "+SearchArray[i][j]+"("+(i+1)+","+(j+1)+")-->";
 					k++;
 				}
 			}								
@@ -206,7 +215,7 @@ var flag=0;
 		
 			if(Input.charAt(k)==SearchArray[i][j])
 			{
-				disp=disp+" "+SearchArray[i][j]+"("+i+","+j+")-->";
+				disp=disp+" "+SearchArray[i][j]+"("+(i+1)+","+(j+1)+")-->";
 				k++;
 				if(k==InputLength) //reached end of word
 					return disp+"Found";
@@ -217,7 +226,7 @@ var flag=0;
 				disp=""; //clear
 				if(Input.charAt(k)==SearchArray[i][j])
 				{
-					disp=disp+" "+SearchArray[i][j]+"("+i+","+j+")-->";
+					disp=disp+" "+SearchArray[i][j]+"("+(i+1)+","+(j+1)+")-->";
 					k++;
 				} 
 			}								
@@ -245,7 +254,7 @@ var flag=0;
 		
 			if(Input.charAt(k)==SearchArray[i][j])
 			{
-				disp=disp+" "+SearchArray[i][j]+"("+i+","+j+")-->";
+				disp=disp+" "+SearchArray[i][j]+"("+(i+1)+","+(j+1)+")-->";
 				k++;i++;
 				if(k==InputLength) //reached end of word
 					return disp+"Found";				
@@ -256,7 +265,7 @@ var flag=0;
 				disp=""; //clear 
 				if(Input.charAt(k)==SearchArray[i][j])
 				{
-					disp=disp+" "+SearchArray[i][j]+"("+i+","+j+")-->";
+					disp=disp+" "+SearchArray[i][j]+"("+(i+1)+","+(j+1)+")-->";
 					k++;
 				}
 			}								
