@@ -1,0 +1,61 @@
+import java.io.File;
+import java.util.ArrayList;
+
+
+public class MemberFinder {
+	
+	public void findMember(String name, ArrayList<Person> personList)
+	{
+		for(int i=0;i<personList.size();i++)
+		{
+			if(name.equals(personList.get(i).getName()))
+			{
+					System.out.println("Person exists in list...");
+					findGeneration(name, personList);
+					return;
+			}
+					
+		}
+		System.out.println("Person does not exist in list...");
+		
+	}
+	
+	public String getFatherFromList(String name, ArrayList<Person> personList)
+	{
+		for(int i=0;i<personList.size();i++)
+		{
+			if(name.equals(personList.get(i).getName()))
+			{
+					
+					return personList.get(i).getFather();
+					
+			}
+					
+		}
+		
+		return null;
+	}
+	
+	private void findGeneration(String name, ArrayList<Person> personList)
+	{
+		
+	}
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		File xmlFile = new File("/home/blackdragon/code-foo-2013/Back-end/1/family.xml");
+		MemberFinder prog = new MemberFinder();
+		FamilyTreeParser parser = new FamilyTreeParser();
+		ArrayList<Person> personList = parser.buildPersonList(xmlFile);
+		
+		String name = "Albus";		
+		
+		prog.findMember(name, personList);
+		//prog.findGeneration(name, personList);
+		prog.getFatherFromList(name, personList);
+	}
+
+}

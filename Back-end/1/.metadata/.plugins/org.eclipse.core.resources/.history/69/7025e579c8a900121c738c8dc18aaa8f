@@ -1,0 +1,28 @@
+import java.io.File;
+
+
+public class MemberFinder {
+	
+	public void findMember(String name)
+	{
+		
+	}
+	
+	public void findGeneration(String name)
+	{
+		
+	}
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		File xmlFile = new File("/home/blackdragon/code-foo-2013/Back-end/1/family.xml");
+		
+		FamilyTreeParser parser = new FamilyTreeParser();
+		parser.buildPersonList(xmlFile);
+
+	}
+
+}

@@ -1,0 +1,78 @@
+import java.io.File;
+import java.util.ArrayList;
+
+
+public class MemberFinder {
+	
+	 int gen=0;
+	
+	public int getGenerationNumber()
+	{
+		return this.gen;
+	}
+	
+	public void findMember(String name, ArrayList<Person> personList)
+	{
+		for(int i=0;i<personList.size();i++)
+		{
+			if(name.equals(personList.get(i).getName()))
+			{
+					System.out.println("Person exists in list...");
+					System.out.print(name);
+					getGenerationList(name, personList);
+					return;
+			}
+					
+		}
+		System.out.println("Person does not exist in list...");
+		
+	}
+	
+	public void getGenerationList(String name, ArrayList<Person> personList)
+	{
+		for(int i=0;i<personList.size();i++)
+		{
+			if(name.equals(personList.get(i).getName()))
+			{
+				if(	personList.get(i).getFather().equals("[other-family]"))
+				{
+					name = personList.get(i).getSpouse();
+					if(personList.get(i).getGender().equals("Female"))
+						System.out.print("-->(Husband:"+name+")");
+					else
+						System.out.print("-->(Wife:"+name+")");
+					getGenerationList(name, personList);					
+					break;
+				}				
+				else
+				{
+				name = personList.get(i).getFather();				
+				System.out.print("-->(Father:"+name+")");
+				getGenerationList(name, personList);
+				gen++;
+				break;		
+				}
+			}					
+		}		
+		//return name;
+	}
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		File xmlFile = new File("/home/blackdragon/code-foo-2013/Back-end/1/family.xml");
+		MemberFinder prog = new MemberFinder();
+		FamilyTreeParser parser = new FamilyTreeParser();
+		ArrayList<Person> personList = parser.buildPersonList(xmlFile);
+		
+		String name = "Lily";		
+		
+		prog.findMember(name, personList);
+		
+		System.out.println("\nGeneration : "+prog.getGenerationNumber());
+	}
+
+}

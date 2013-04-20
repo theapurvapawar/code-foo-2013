@@ -1,0 +1,77 @@
+import org.w3c.dom.*;
+import java.io.File;
+
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.DocumentBuilder;
+import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException; 
+
+public class FamilyTreeParser {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String fileName = "/home/blackdragon/code-foo-2013/Back-end/1/family.xml";
+		String personName = "Will";
+		try {
+
+            DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
+            Document doc = docBuilder.parse (new File(fileName));
+            
+            
+            
+            // normalize text representation
+            doc.getDocumentElement ().normalize ();
+            //System.out.println ("Root element : " + 
+                 //doc.getDocumentElement().getNodeName());
+
+
+            NodeList listOfPersons = doc.getElementsByTagName("person");            
+            System.out.println("Total Persons : " + listOfPersons.getLength());
+
+            for(int s=0; s<listOfPersons.getLength() ; s++){
+
+
+                Node firstPersonNode = listOfPersons.item(s);
+                if(firstPersonNode.getNodeType() == Node.ELEMENT_NODE){
+
+
+                    Element firstPersonElement = (Element)firstPersonNode;
+
+                    //-------
+                    NodeList NameList = firstPersonElement.getElementsByTagName("name");
+                    Element nameElement = (Element)NameList.item(0);
+
+                    NodeList textFNList = nameElement.getChildNodes();
+                    String name = (textFNList.item(0)).getNodeValue().trim();
+                    
+                    if(personName==name)
+                    {
+                    	System.out.println(name+"hi");
+                    	break;
+                    }
+                              
+                                                                                               
+                }//end of if clause
+
+            }//end of for loop      */  
+                      
+        }catch (SAXParseException err) {
+        System.out.println ("** Parsing error" + ", line " 
+             + err.getLineNumber () + ", uri " + err.getSystemId ());
+        System.out.println(" " + err.getMessage ());
+
+        }catch (SAXException e) {
+        Exception x = e.getException ();
+        ((x == null) ? e : x).printStackTrace ();
+
+        }catch (Throwable t) {
+        t.printStackTrace ();
+        }
+		
+	}
+	}
