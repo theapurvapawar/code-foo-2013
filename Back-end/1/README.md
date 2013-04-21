@@ -16,6 +16,10 @@ To run the program, execute-
 ```
 java -jar FamilyTree.jar nameString
 ```
+Example -
+```
+java -jar FamilyTree.jar Cindy
+```
 where 'nameString' is a name from 'family.xml' file.
 
 NOTE : 'nameString' is case-sensitive. (Ex. : type 'Ron' and not 'RON'/'ron'/'rON' etc.)
