@@ -22,6 +22,11 @@ To run the program, use the 'HighScoreSort-jar.jar' and execute the command:
 ```
 java -jar HighScoreSort-jar.jar /path/to/score.xml
 ```
+Example - 
+```
+java -jar HighScoreSort-jar.jar score.xml
+```
+If score.xml is in th same directory.
 
 Choosing QuickSort
 -------------
@@ -31,7 +36,7 @@ Although QuickSort's worst case time complexity is O(n^2), QuickSort still is mu
 Why XML as input?
 -------------
 
-Always easier and faster to parse a structured document. Helps a lot in scalability. Especially when used with a SAX parser. DOM parser uses a lot of memory.
+Always easier and faster to parse a structured document. Helps a lot in scalability and portability.
 
 
 
