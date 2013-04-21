@@ -16,6 +16,11 @@ java -jar JaggerMoves.jar str1 str2
 ```
 where 'str1' and 'str2' are strings from the 'three-letter-words.txt' file.
 
+Example -
+```
+java -jar JaggerMoves.jar aah sax
+```
+
 Implementation
 -------------
 
