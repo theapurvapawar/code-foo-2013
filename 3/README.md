@@ -25,7 +25,7 @@ Notes to myself -
 
 Error on 'score' --> check for double 's' input --> solved
 
-plasmid --> not found (intentionally put?)
+plasmid --> not found (intentionally put?) --> found/solved
 
 would you kindly, Xin Zhao --> check for spaces --> solved
 
@@ -36,5 +36,6 @@ words go from -
 	top to bottom
 	bottom to top
 	top left to bottom right diagonally
+	top right to bottom left diagonally
 
 Did some basic CSS styling on the HTML

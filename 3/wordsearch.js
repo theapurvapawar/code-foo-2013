@@ -75,6 +75,8 @@ if(disp=="Not Found")
 	disp = reverseVerticalSearch(wordSearchArray,txt);
 if(disp=="Not Found")
 	disp = DiagLTtoRB(wordSearchArray,txt);
+if(disp=="Not Found")
+	disp = DiagRTtoLB(wordSearchArray,txt);
 
 document.getElementById("demo").innerHTML=disp;
 }
@@ -266,7 +268,7 @@ var flag=0;
 				if(Input.charAt(k)==SearchArray[i][j])
 				{
 					disp=disp+" "+SearchArray[i][j]+"("+(i+1)+","+(j+1)+")-->";
-					k++;
+					k++;i++;
 				}
 			}								
 			
@@ -275,3 +277,45 @@ var flag=0;
 
 return "Not Found";
 }
+
+function DiagRTtoLB(SearchArray,Input)
+{
+
+var InputLength = Input.length;
+var disp="";
+
+var k=0;
+var flag=0;
+
+	
+	for(var i=0;i<25;i++)
+	{
+		for(var j=19;j>-1;j--) //linearly searches diagonally right-top to left-bottom
+		{
+		
+			if(Input.charAt(k)==SearchArray[i][j])
+			{
+				disp=disp+" "+SearchArray[i][j]+"("+(i+1)+","+(j+1)+")-->";
+				k++;i++;
+				if(k==InputLength) //reached end of word
+					return disp+"Found";				
+			}
+			else
+			{
+				k=0; //start again
+				disp=""; //clear 
+				if(Input.charAt(k)==SearchArray[i][j])
+				{
+					disp=disp+" "+SearchArray[i][j]+"("+(i+1)+","+(j+1)+")-->";
+					k++;i++;
+				}
+			}								
+			
+		}
+	}
+
+return "Not Found";
+}
+
+
+
